@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 
+
 @Component({
   selector: 'shared-menu',
   templateUrl: './menu.component.html',
@@ -11,13 +12,45 @@ export class MenuComponent implements OnInit {
   public menuItems: MenuItem[] = [];
 
   ngOnInit(): void {
-    this.menuItems = [
-      { label: 'Home', icon: 'pi pi-home' },
-      { label: 'New', icon: 'pi pi-plus' },
-      { label: 'Open', icon: 'pi pi-download' },
-      { label: 'Undo', icon: 'pi pi-refresh' },
 
+    this.menuItems = [
+      {
+        label: 'Pies de Angular',
+        icon: 'pi pi-desktop',
+        items: [
+          {
+            label: 'Texto y Fechas',
+            icon: 'pi pi-align-left',
+          },
+          {
+            label: 'Números',
+            icon: 'pi pi-dollar',
+          },
+          {
+            label: 'No comunes',
+            icon: 'pi pi-globe',
+          },
+        ],
+      },
+      {
+        label: 'Pipes personalizados',
+        icon: 'pi pi-cog',
+        items: [
+          {
+            label: 'Otros personalizados',
+            icon: 'pi pi-cog',
+            items: [
+              {
+                label: 'Bookmark',
+                icon: 'pi pi-fw pi-bookmark'
+              },
+            ]
+          },
+        ],
+      },
     ];
+
+
   }
 
 }
