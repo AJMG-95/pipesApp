@@ -4,3 +4,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 npm install --save primeng@16.9.1
 npm i primeicons
+npm istall @angular/animations --save
