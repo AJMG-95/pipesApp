@@ -1,1 +1,113 @@
-<p>numbers-page works!</p>
+<p-panel [showHeader]="true" header="Pipes básicos" class="p-2">
+  <h1>Pipes numéricos</h1>
+  <p>
+    Pipes Incluidos en Angular - Usualmente en el Common Module
+  </p>
+</p-panel>
+
+<div class="grid p-4">
+  <div class="col-12 md:col-4">
+    <p-card header="number - Pipe" subheader="()">
+      <p>
+        Formato: number
+      </p>
+      <p>
+        Original: {{ totalSales }}
+      </p>
+      <p>
+        Con la pipe: {{ totalSales | number }}
+      </p>
+    </p-card>
+  </div>
+  <div class="col-12 md:col-4">
+    <p-card header="number - Pipe" subheader="(decimal)">
+      <p>
+        Formato: number:'1.2-2'
+      </p>
+      <p>
+        Original: {{ totalSales }}
+      </p>
+      <p>
+        Con la pipe: {{ totalSales | number:'1.2-2' }}
+      </p>
+    </p-card>
+  </div>
+  <div class="col-12 md:col-4">
+    <p-card header="currency - Pipe" subheader="()">
+      <p>
+        Formato: currency
+      </p>
+      <p>
+        Original: {{ totalSales }} + 1235 = {{ totalSales + 1235 }}
+      </p>
+      <p>
+        Con la pipe: {{ totalSales + 1235 | currency }}
+      </p>
+    </p-card>
+  </div>
+  <div class="col-12 md:col-4">
+    <p-card header="currency - Pipe" subheader="(specific currency)">
+      <p>
+        Formato: currency:'EUR'
+      </p>
+      <p>
+        Original: {{ totalSales }} + 1235 = {{ totalSales + 1235 }}
+      </p>
+      <p>
+        Con la pipe: {{ totalSales + 1235 | currency:'EUR' }}
+      </p>
+    </p-card>
+  </div>
+  <div class="col-12 md:col-4">
+    <p-card header="currency - Pipe" subheader="(specific currency + symbol)">
+      <p>
+        Formato: currency:'EUR':'symbol-narrow'
+      </p>
+      <p>
+        Original: {{ totalSales }} + 1235 = {{ totalSales + 1235 }}
+      </p>
+      <p>
+        Con la pipe: {{ totalSales + 1235 | currency:'EUR':'symbol-narrow' }}
+      </p>
+    </p-card>
+  </div>
+  <div class="col-12 md:col-4">
+    <p-card header="currency - Pipe" subheader="(specific currency + symbol + decimal)">
+      <p>
+        Formato: currency:'EUR':'symbol-narrow':'1.6-6'
+      </p>
+      <p>
+        Original: {{ totalSales }} + 1235 = {{ totalSales + 1235 }}
+      </p>
+      <p>
+        Con la pipe: {{ totalSales + 1235 | currency:'EUR':'symbol-narrow':'1.6-6' }}
+      </p>
+    </p-card>
+  </div>
+  <div class="col-12 md:col-4">
+    <p-card header="percent - Pipe" subheader="()">
+      <p>
+        Formato: percent
+      </p>
+      <p>
+        Original: {{ percent }}
+      </p>
+      <p>
+        Con la pipe: {{ percent | percent }}
+      </p>
+    </p-card>
+  </div>
+  <div class="col-12 md:col-4">
+    <p-card header="percent - Pipe" subheader="(decimal)">
+      <p>
+        Formato: percent
+      </p>
+      <p>
+        Original: {{ percent }}
+      </p>
+      <p>
+        Con la pipe: {{ percent | percent:'1.2-2' }}
+      </p>
+    </p-card>
+  </div>
+</div>
