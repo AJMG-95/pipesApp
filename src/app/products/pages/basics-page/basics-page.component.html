@@ -5,9 +5,9 @@
   </p>
 </p-panel>
 
-<div class="grid ">
+<div class="grid p-4">
   <div class="col-12 md:col-4 ">
-    <p-card header="uppercase">
+    <p-card header="uppercase - Pipe">
       <p>
         Original: {{ nameLower }}
       </p>
@@ -17,7 +17,7 @@
     </p-card>
   </div>
   <div class="col-12 md:col-4 ">
-    <p-card header="lowercase">
+    <p-card header="lowercase - Pipe">
       <p>
         Original: {{ nameUpper }}
       </p>
@@ -27,7 +27,7 @@
     </p-card>
   </div>
   <div class="col-12 md:col-4 ">
-    <p-card header="titlecase">
+    <p-card header="titlecase - Pipe">
       <p>
         Original: {{ fullName }}
       </p>
@@ -37,7 +37,7 @@
     </p-card>
   </div>
   <div class="col-12 md:col-6 ">
-    <p-card header="Pipes de Fechas">
+    <p-card header="date - Pipe">
       <ol>
         <li> fecha </li>
         <li> fecha | date</li>
@@ -50,11 +50,14 @@
       <ol>
         <li> fecha | date:'long':'GMT-6'</li>
         <li> fecha | date:'long':'GMT-4'</li>
+        <li> fecha | date:'long':'':'es-419'</li>
+        <li> fecha | date:'long':'':'en-US'</li>
+        <li> fecha | date:'long':'':'fr-CA'</li>
       </ol>
     </p-card>
   </div>
   <div class="col-12 md:col-6 ">
-    <p-card header="Pipes de Fechas">
+    <p-card header="date - Pipe">
       <ol>
         <li> {{customDate}} </li>
         <li> {{customDate | date}}</li>
@@ -67,6 +70,9 @@
       <ol>
         <li> {{customDate | date:'long':'GMT-6'}}</li>
         <li> {{customDate | date:'long':'GMT-4'}}</li>
+        <li>{{ customDate | date:'long':'':'es-419' }}</li>
+        <li>{{ customDate | date:'long':'':'en-US' }}</li>
+        <li>{{ customDate | date:'long':'':'fr-CA' }}</li>
       </ol>
     </p-card>
   </div>
