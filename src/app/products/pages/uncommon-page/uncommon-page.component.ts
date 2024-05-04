@@ -31,15 +31,24 @@ export class UncommonPageComponent {
     'other': 'Hay # clientes esperando.'
   };
   nextClient(): void {
-    let array = ['Sandra', 'Antonio Jesús', 'Nerea', 'Adrián', 'Ezequiel', 'Alba', 'Estrella'];
-    if (this.clients.length < 1) {
-      let numb = Math.floor(Math.random() * 5);
-      for (let i = 0; i < numb; i++) {
-        this.clients[i] = array[i]
+    // Array con los nombres posibles de clientes
+    const array = ['Sandra', 'Antonio Jesús', 'Nerea', 'Adrián', 'Ezequiel', 'Alba', 'Estrella'];
+
+    // Elimina el primer cliente de la lista (si hay alguno)
+    if (this.clients.length !== 0) {
+      this.clients.shift();
+    } else {
+      // Genera un número aleatorio entre 0 y 6
+      const numb = Math.floor(Math.random() * 7);
+
+      // Asigna los nombres del array a this.clients según el número aleatorio generado
+      for (let i = 0; i <= numb; i++) {
+        this.clients.push(array[i]);
       }
     }
-    this.clients.shift();
+
   }
+
 
   // Json Pipe && KeyValue Pipe
   public person = {
