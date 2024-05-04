@@ -1,0 +1,18 @@
+<p-panel [showHeader]="true" header="Pipes personalizados" class="p-2">
+  <h1>Pipes Personalizados</h1>
+  <p>
+    Pipes creados a medida por y para el {{'uSuArIo' | toggleCase:changeCase }}.
+  </p>
+</p-panel>
+
+
+<p-toolbar>
+  <div class="p-toolbar-group-start">
+    <p-button label="ToggleCase" icon="pi pi-search" (click)="toggleChangeCase()"></p-button>
+  </div>
+  <div class="p-toolbar-group-center">
+    <p-button class="mr-2" label="Por nombre" icon="pi pi-sort" styleClass="p-button-success"></p-button>
+    <p-button class="mr-2" label="Por volar" icon="pi pi-sort" styleClass="p-button-warning"></p-button>
+    <p-button class="mr-2" label="Por color" icon="pi pi-sort" styleClass="p-button-help"></p-button>
+  </div>
+</p-toolbar>
