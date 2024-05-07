@@ -9,6 +9,9 @@ import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { OrderComponent } from './pages/order/order.component';
 import { ToggleCasePipe } from './pipes/toggle-case.pipe';
 import { CanFlyPipe } from './pipes/can-fly.pipe';
+import { SharedModule } from '../shared/shared.module';
+import { SortByPipe } from './pipes/sort-by.pipe';
+import { ColorNamePipe } from './pipes/color-name.pipe';
 
 
 @NgModule({
@@ -21,11 +24,14 @@ import { CanFlyPipe } from './pipes/can-fly.pipe';
     //Pipes
     ToggleCasePipe,
     CanFlyPipe,
+    SortByPipe,
+    ColorNamePipe,
   ],
   imports: [
     CommonModule,
     ProductsRoutingModule,
     PrimeNgModule,
+    SharedModule,
   ]
 })
 export class ProductsModule { }

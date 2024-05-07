@@ -1,26 +1,30 @@
 <p-panel [showHeader]="true" header="Pipes personalizados" class="p-2">
   <h1>Pipes Personalizados</h1>
   <p>
-    Pipes creados a medida por y para el {{'uSuArIo' | toggleCase:changeCase }}.
+    Pipes creados a medida por y para el usuario.
   </p>
 </p-panel>
 
 
 <p-toolbar>
   <div class="p-toolbar-group-start">
-    <p-button label="ToggleCase" icon="pi pi-search" (click)="toggleChangeCase()"></p-button>
+    <p-button label="ToggleNameCase" icon="pi pi-slack" (click)="toggleChangeCase()"></p-button>
   </div>
   <div class="p-toolbar-group-center">
-    <p-button class="mr-2" label="Por nombre" icon="pi pi-sort" styleClass="p-button-success"></p-button>
-    <p-button class="mr-2" label="Por volar" icon="pi pi-sort" styleClass="p-button-warning"></p-button>
-    <p-button class="mr-2" label="Por color" icon="pi pi-sort" styleClass="p-button-help"></p-button>
+    <p-button class="mr-2" (onClick)="changeOrder('name')" label="Por nombre" icon="pi pi-sort"
+      styleClass="p-button-success"></p-button>
+    <p-button class="mr-2" (onClick)="changeOrder('canFly')" label="Por volar" icon="pi pi-sort"
+      styleClass="p-button-warning"></p-button>
+    <p-button class="mr-2" (onClick)="changeOrder('color')" label="Por color" icon="pi pi-sort"
+      styleClass="p-button-help"></p-button>
   </div>
 </p-toolbar>
 
 <div class="grid">
   <div class="col mt-2">
     <p-panel header="Héroes">
-      <p-table [value]="heros" [tableStyle]="{ 'min-width': '50rem' }">
+      <p-table [value]="heros | sortBy:orderBy:sortOrder" [tableStyle]="{ 'min-width': '50rem' }" [paginator]="true"
+        [rows]="5" [rowsPerPageOptions]="[5, 10, 15, 20]">
         <ng-template pTemplate="header">
           <tr>
             <th>Nombre</th>
@@ -30,9 +34,9 @@
         </ng-template>
         <ng-template pTemplate="body" let-hero>
           <tr>
-            <td>{{ hero.name }}</td>
+            <td>{{ hero.name | toggleCase:changeCase }}</td>
             <td>{{ hero.canFly | canFly}}</td>
-            <td>{{ hero.color }}</td>
+            <td>{{ hero.color | colorName }}</td>
           </tr>
         </ng-template>
       </p-table>

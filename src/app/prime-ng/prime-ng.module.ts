@@ -8,6 +8,7 @@ import { MenuModule } from 'primeng/menu';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { ToolbarModule } from 'primeng/toolbar';
+import { PaginatorModule } from 'primeng/paginator';
 
 
 
@@ -22,6 +23,7 @@ import { ToolbarModule } from 'primeng/toolbar';
     PanelModule,
     TableModule,
     ToolbarModule,
+    PaginatorModule
   ]
 })
 export class PrimeNgModule { }
